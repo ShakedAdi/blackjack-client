@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import './App.css';
 import { Card } from "./components/Card/Card";
 import { CardBack } from "./components/Card/CardBack";
+import { Deck } from "./components/Deck/Deck";
 
 interface Status {
   isRunning: boolean;
@@ -25,6 +26,7 @@ function App() {
       <p className="server-status">Server Status: {isRunning ? "UP" : "DOWN"}</p>
       <Card rank="A" suit="hearts"/>
       <CardBack/>
+      <Deck/>
     </>
   );
 }
