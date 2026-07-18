@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './App.css';
 
 interface Status {
   isRunning: boolean;
@@ -19,8 +20,7 @@ function App() {
 
   return (
     <>
-      <h1>Test</h1>
-      <h2>Server Status: {isRunning ? "UP" : "DOWN"}</h2>
+      <p className="server-status">Server Status: {isRunning ? "UP" : "DOWN"}</p>
     </>
   );
 }
