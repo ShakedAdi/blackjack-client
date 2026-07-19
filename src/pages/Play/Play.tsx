@@ -8,6 +8,7 @@ import { DealerHand } from "../../components/DealerHand/DealerHand";
 
 export function Play() {
   const [balance, setBalance] = useState<number>(1000);
+  const [initialBet, setInitialBet] = useState<number>();
   const [dealerHand, setDealerHand] = useState<DealerHandType>({cards: [{rank: "10", suit: "spades"}, {rank: "J", suit: "spades"}], isHoleCardHidden: true});
   const [playerHands, setPlayerHands] = useState<HandType[]>([
     {
@@ -42,27 +43,48 @@ export function Play() {
       bet: 100
     },
   ]);
+
+  function handleBet(value: number): void {
+    setInitialBet(Number(value));
+  }
   
   return (
     <div className={styles.board}>
       <p className={styles.balance}>Balance: {balance}</p>
-      <div className={styles.dealerHand}>
-        <DealerHand cards={dealerHand.cards} isHoleCardHidden={dealerHand.isHoleCardHidden}/>
-      </div>
-      <div className={styles.deck}>
-        <Deck/>
-      </div>
-      <div className={styles.actionButtons}>
-        <ActionButtons
-          onHit={() => console.log("Hit clicked")}
-          onDouble={() => console.log("Double clicked")}
-          onSplit={() => console.log("Split clicked")}
-          onStand={() => console.log("Stand clicked")}
+      {initialBet 
+      ? <>
+        <div className={styles.dealerHand}>
+          <DealerHand cards={dealerHand.cards} isHoleCardHidden={dealerHand.isHoleCardHidden}/>
+        </div>
+        <div className={styles.deck}>
+          <Deck/>
+        </div>
+        <div className={styles.actionButtons}>
+          <ActionButtons
+            onHit={() => console.log("Hit clicked")}
+            onDouble={() => console.log("Double clicked")}
+            onSplit={() => console.log("Split clicked")}
+            onStand={() => console.log("Stand clicked")}
+          />
+        </div>
+        <div className={styles.playerHands}>
+          <PlayerHands hands={playerHands}/>
+        </div>
+      </>
+      : <input
+          type="number"
+          className={styles.betInput}
+          placeholder="Enter your bet"
+          min={1}
+          max={balance}
+          onKeyDown={(e) => {
+            if (e.key !== "Enter") return;
+            const input = e.currentTarget;
+            if (input.value === "" || !input.checkValidity()) return;
+            handleBet(input.value);
+          }}
         />
-      </div>
-      <div className={styles.playerHands}>
-        <PlayerHands hands={playerHands}/>
-      </div>
+      }
     </div>
   );
 }

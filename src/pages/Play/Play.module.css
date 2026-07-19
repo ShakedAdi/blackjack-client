@@ -25,6 +25,60 @@
     text-transform: uppercase;
 }
 
+.betInput {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 240px;
+    box-sizing: border-box;
+    padding: 16px 24px;
+    border-radius: 999px;
+    border: 2px solid var(--color-gold);
+
+    background: linear-gradient(180deg, #8b1e2b 0%, #5c1019 100%);
+    color: var(--color-gold-text);
+
+    font-family: var(--font-casino);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-align: center;
+
+    cursor: text;
+    box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.4),
+        0 8px 20px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    transition: box-shadow 0.15s ease;
+}
+
+.betInput::placeholder {
+    color: rgba(245, 222, 179, 0.55);
+    letter-spacing: normal;
+    font-size: 1rem;
+}
+
+.betInput:focus {
+    outline: none;
+    box-shadow:
+        0 0 0 2px var(--color-gold),
+        0 8px 20px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.betInput::-webkit-outer-spin-button,
+.betInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.betInput[type="number"] {
+    appearance: textfield;
+}
+
 .deck {
     position: absolute;
     top: 20px;
