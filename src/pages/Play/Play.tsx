@@ -14,13 +14,15 @@ export function Play() {
         {rank: "A", suit: "hearts"}, 
         {rank: "10", suit: "clubs"}, 
         {rank: "K", suit: "hearts"}
-      ]
+      ],
+      bet: 100
     },
     {
       cards: [
         {rank: "5", suit: "hearts"}, 
         {rank: "5", suit: "clubs"},
-      ]
+      ],
+      bet: 100
     },
     {
       cards: [
@@ -28,13 +30,15 @@ export function Play() {
         {rank: "2", suit: "clubs"}, 
         {rank: "2", suit: "spades"},
         {rank: "2", suit: "diamonds"}
-      ]
+      ],
+      bet: 100
     },
     {
       cards: [
         {rank: "6", suit: "clubs"}, 
         {rank: "4", suit: "diamonds"}
-      ]
+      ],
+      bet: 100
     },
   ]);
   

@@ -30,6 +30,7 @@ export interface Card {
 
 export interface Hand {
     cards: Card[]
+    bet: number
 }
 
 export interface DealerHand {
