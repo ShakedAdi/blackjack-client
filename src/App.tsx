@@ -5,6 +5,8 @@ import { CardBack } from "./components/Card/CardBack";
 import { Deck } from "./components/Deck/Deck";
 import { Hand } from "./components/Hand/Hand";
 import { Player } from "./components/Player/Player";
+import { DealerHand } from "./components/DealerHand/DealerHand";
+
 
 interface Status {
   isRunning: boolean;
@@ -61,6 +63,13 @@ function App() {
           },
         ]
       }/>
+      <DealerHand
+        cards={[
+          {rank: "6", suit: "clubs"},
+          {rank: "4", suit: "diamonds"}
+        ]}
+        isHoleCardHidden={true}
+      />
     </>
   );
 }

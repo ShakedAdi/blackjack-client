@@ -31,3 +31,8 @@ export interface Card {
 export interface Hand {
     cards: Card[]
 }
+
+export interface DealerHand {
+    cards: Card[],
+    isHoleCardHidden: boolean,
+}

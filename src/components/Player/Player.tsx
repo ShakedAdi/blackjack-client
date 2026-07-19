@@ -9,7 +9,7 @@ interface PlayerProps {
 export function Player({ hands }: PlayerProps) {
     return (
         <div className={styles.playerContainer}>
-            {hands.map(hand => <Hand cards={hand.cards.map(card => ({rank: card.rank, suit: card.suit}))}/>)}
+            {hands.map((hand, index) => <Hand key={index} cards={hand.cards.map(card => ({rank: card.rank, suit: card.suit}))}/>)}
         </div>
     );
 }
