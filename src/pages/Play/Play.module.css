@@ -1,0 +1,30 @@
+.board {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "dealer deck"
+        "player player";
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.deck {
+    grid-area: deck;
+}
+
+.playerHands {
+    grid-area: player;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 20px;
+}
+
+.dealerHand {
+    grid-area: dealer;
+    display: flex;
+    justify-content: center;
+}
