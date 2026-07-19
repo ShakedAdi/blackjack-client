@@ -27,3 +27,7 @@ export interface Card {
     rank: Rank;
     suit: Suit;
 }
+
+export interface Hand {
+    cards: Card[]
+}
