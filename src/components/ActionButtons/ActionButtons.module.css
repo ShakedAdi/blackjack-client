@@ -1,0 +1,43 @@
+.actionButtons {
+    display: flex;
+    gap: 20px;
+}
+
+.actionButton {
+    padding: 12px 28px;
+    border-radius: 999px;
+    border: 2px solid #d4af37;
+
+    background: linear-gradient(180deg, #8b1e2b 0%, #5c1019 100%);
+    color: #f5deb3;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.actionButton:hover:not(:disabled) {
+    filter: brightness(1.15);
+}
+
+.actionButton:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+.actionButton:disabled {
+    cursor: not-allowed;
+    filter: grayscale(0.7) brightness(0.6);
+    box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ActionButtons } from "../../components/ActionButtons/ActionButtons";
 import { Deck } from "../../components/Deck/Deck";
 import { PlayerHands } from "../../components/PlayerHands/PlayerHands";
 import { type Hand as HandType, type DealerHand as DealerHandType } from "../../types";
@@ -44,6 +45,14 @@ export function Play() {
       </div>
       <div className={styles.deck}>
         <Deck/>
+      </div>
+      <div className={styles.actionButtons}>
+        <ActionButtons
+          onHit={() => console.log("Hit clicked")}
+          onDouble={() => console.log("Double clicked")}
+          onSplit={() => console.log("Split clicked")}
+          onStand={() => console.log("Stand clicked")}
+        />
       </div>
       <div className={styles.playerHands}>
         <PlayerHands hands={playerHands}/>
