@@ -6,12 +6,12 @@
 .actionButton {
     padding: 12px 28px;
     border-radius: 999px;
-    border: 2px solid #d4af37;
+    border: 2px solid var(--color-gold);
 
     background: linear-gradient(180deg, #8b1e2b 0%, #5c1019 100%);
-    color: #f5deb3;
+    color: var(--color-gold-text);
 
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: var(--font-casino);
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.1em;

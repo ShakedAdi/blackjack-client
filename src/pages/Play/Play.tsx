@@ -7,6 +7,7 @@ import styles from "./Play.module.css";
 import { DealerHand } from "../../components/DealerHand/DealerHand";
 
 export function Play() {
+  const [balance, setBalance] = useState<number>(1000);
   const [dealerHand, setDealerHand] = useState<DealerHandType>({cards: [{rank: "10", suit: "spades"}, {rank: "J", suit: "spades"}], isHoleCardHidden: true});
   const [playerHands, setPlayerHands] = useState<HandType[]>([
     {
@@ -44,6 +45,7 @@ export function Play() {
   
   return (
     <div className={styles.board}>
+      <p className={styles.balance}>Balance: {balance}</p>
       <div className={styles.dealerHand}>
         <DealerHand cards={dealerHand.cards} isHoleCardHidden={dealerHand.isHoleCardHidden}/>
       </div>
