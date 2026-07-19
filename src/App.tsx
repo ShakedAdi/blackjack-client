@@ -4,7 +4,7 @@ import { Card } from "./components/Card/Card";
 import { CardBack } from "./components/Card/CardBack";
 import { Deck } from "./components/Deck/Deck";
 import { Hand } from "./components/Hand/Hand";
-import { Player } from "./components/Player/Player";
+import { PlayerHands } from "./components/PlayerHands/PlayerHands";
 import { DealerHand } from "./components/DealerHand/DealerHand";
 
 
@@ -32,7 +32,7 @@ function App() {
       <CardBack/>
       <Deck/>
       <Hand cards={[{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},]}/>
-      <Player hands={
+      <PlayerHands hands={
         [
           {
             cards: [
