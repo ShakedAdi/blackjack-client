@@ -3,6 +3,7 @@ import './App.css';
 import { Card } from "./components/Card/Card";
 import { CardBack } from "./components/Card/CardBack";
 import { Deck } from "./components/Deck/Deck";
+import { Hand } from "./components/Hand/Hand";
 
 interface Status {
   isRunning: boolean;
@@ -27,6 +28,7 @@ function App() {
       <Card rank="A" suit="hearts"/>
       <CardBack/>
       <Deck/>
+      <Hand cards={[{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},{rank: "A", suit: "hearts"}, {rank: "10", suit: "clubs"}, {rank: "K", suit: "hearts"},]}/>
     </>
   );
 }

@@ -1,0 +1,8 @@
+.handContainer {
+    display: flex;
+    width: min-content;
+
+    > *:not(:first-child) {
+        margin-left: -130px;
+    }
+}
