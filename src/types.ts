@@ -22,3 +22,17 @@ export const Rank = {
     Ace: "A",
 } as const;
 export type Rank = (typeof Rank)[keyof typeof Rank];
+
+export interface Card {
+    rank: Rank;
+    suit: Suit;
+}
+
+export interface Hand {
+    cards: Card[]
+}
+
+export interface DealerHand {
+    cards: Card[],
+    isHoleCardHidden: boolean,
+}
