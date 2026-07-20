@@ -1,4 +1,4 @@
-import type { Card, Hand, ResolvedHandStatus } from "../types";
+import type { Card, GameState, Hand, ResolvedHandStatus } from "../types";
 
 const BASE_URL = "http://localhost:42069";
 
@@ -105,5 +105,24 @@ export async function stand(gameId: string): Promise<void> {
         const { error } = await response.json();
         throw new Error(error);
     }
+}
+
+export interface GameStateResponse {
+    state: GameState;
+    isHoleCardHidden: boolean;
+    player: Hand[];
+    dealer: Card[];
+    balance: number;
+}
+
+export async function getGameState(gameId: string): Promise<GameStateResponse> {
+    const response = await fetch(`${BASE_URL}/games/${gameId}`);
+
+    if (!response.ok) {
+        const { error } = await response.json();
+        throw new Error(error);
+    }
+
+    return response.json();
 }
 

@@ -79,6 +79,19 @@
     appearance: textfield;
 }
 
+.error {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    color: #ff6b6b;
+
+    font-family: var(--font-casino);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
 .deck {
     position: absolute;
     top: 20px;

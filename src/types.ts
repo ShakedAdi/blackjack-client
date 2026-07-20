@@ -31,8 +31,13 @@ export const HandStatus = {
 } as const;
 export type HandStatus = (typeof HandStatus)[keyof typeof HandStatus];
 
-// the status of a hand after hit/double/split - a natural blackjack can only
-// occur on the initial two-card deal, never as the result of one of these actions
+export const GameState = {
+    PlayerTurn: "player-turn",
+    DealerTurn: "dealer-turn",
+    RoundOver: "round-over",
+} as const;
+export type GameState = (typeof GameState)[keyof typeof GameState];
+
 export type ResolvedHandStatus = Exclude<HandStatus, "blackjack">;
 
 export const HandOutcome = {
