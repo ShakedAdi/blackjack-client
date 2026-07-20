@@ -107,6 +107,17 @@ export async function stand(gameId: string): Promise<void> {
     }
 }
 
+export async function deleteGame(gameId: string): Promise<void> {
+    const response = await fetch(`${BASE_URL}/games/${gameId}/delete`, {
+        method: "POST",
+    });
+
+    if (!response.ok) {
+        const { error } = await response.json();
+        throw new Error(error);
+    }
+}
+
 export interface GameStateResponse {
     state: GameState;
     isHoleCardHidden: boolean;
