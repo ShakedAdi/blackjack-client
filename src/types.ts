@@ -23,17 +23,38 @@ export const Rank = {
 } as const;
 export type Rank = (typeof Rank)[keyof typeof Rank];
 
+export const HandStatus = {
+    Playing: "playing",
+    Stood: "stood",
+    Busted: "busted",
+    Blackjack: "blackjack",
+} as const;
+export type HandStatus = (typeof HandStatus)[keyof typeof HandStatus];
+
+// the status of a hand after hit/double/split - a natural blackjack can only
+// occur on the initial two-card deal, never as the result of one of these actions
+export type ResolvedHandStatus = Exclude<HandStatus, "blackjack">;
+
+export const HandOutcome = {
+    Win: "win",
+    Loss: "loss",
+    Push: "push",
+} as const;
+export type HandOutcome = (typeof HandOutcome)[keyof typeof HandOutcome];
+
 export interface Card {
     rank: Rank;
     suit: Suit;
 }
 
 export interface Hand {
-    cards: Card[]
-    bet: number
+    cards: Card[];
+    status: HandStatus;
+    bet: number;
+    outcome?: HandOutcome;
 }
 
 export interface DealerHand {
-    cards: Card[],
-    isHoleCardHidden: boolean,
+    cards: Card[];
+    isHoleCardHidden: boolean;
 }

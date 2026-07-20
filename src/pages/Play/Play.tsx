@@ -7,6 +7,7 @@ import styles from "./Play.module.css";
 import { DealerHand } from "../../components/DealerHand/DealerHand";
 
 export function Play() {
+  const [gameId, setGameId] = useState<string>("");
   const [balance, setBalance] = useState<number>(1000);
   const [initialBet, setInitialBet] = useState<number>();
   const [dealerHand, setDealerHand] = useState<DealerHandType>({cards: [{rank: "10", suit: "spades"}, {rank: "J", suit: "spades"}], isHoleCardHidden: true});
@@ -14,9 +15,10 @@ export function Play() {
     {
       cards: [
         {rank: "A", suit: "hearts"}, 
-        {rank: "10", suit: "clubs"}, 
+        {rank: "10", suit: "clubs"},
         {rank: "K", suit: "hearts"}
       ],
+      status: "playing",
       bet: 100
     },
     {
@@ -24,6 +26,7 @@ export function Play() {
         {rank: "5", suit: "hearts"}, 
         {rank: "5", suit: "clubs"},
       ],
+      status: "playing",
       bet: 100
     },
     {
@@ -33,6 +36,7 @@ export function Play() {
         {rank: "2", suit: "spades"},
         {rank: "2", suit: "diamonds"}
       ],
+      status: "playing",
       bet: 100
     },
     {
@@ -40,12 +44,18 @@ export function Play() {
         {rank: "6", suit: "clubs"}, 
         {rank: "4", suit: "diamonds"}
       ],
+      status: "playing",
       bet: 100
     },
   ]);
 
+  function newGame(): void {
+
+  }
+
   function handleBet(value: number): void {
     setInitialBet(Number(value));
+    newGame();
   }
   
   return (

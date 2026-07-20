@@ -9,7 +9,7 @@ interface PlayerHandsProps {
 export function PlayerHands({ hands }: PlayerHandsProps) {
     return (
         <div className={styles.playerContainer}>
-            {hands.map((hand, index) => <Hand key={index} cards={hand.cards} bet={hand.bet}/>)}
+            {hands.map((hand, index) => <Hand key={index} {...hand}/>)}
         </div>
     );
 }
