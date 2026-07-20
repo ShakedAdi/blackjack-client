@@ -6,10 +6,12 @@ import styles from "./Play.module.css";
 import { DealerHand } from "../../components/DealerHand/DealerHand";
 import { GameState } from "../../types";
 import { NewRoundButton } from "../../components/NewRoundButton/NewRoundButton";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { deleteGame } from "../../api/blackjackApi";
 
 export function Play() {
   const {
+    gameId,
     balance,
     dealerHand,
     playerHands,
@@ -27,6 +29,20 @@ export function Play() {
   } = useGame();
 
   const [startNewRound, setStartNewRound] = useState<boolean>(false);
+
+  const gameIdRef = useRef(gameId);
+
+  useEffect(() => {
+    gameIdRef.current = gameId;
+  }, [gameId]);
+
+  useEffect(() => {
+    return () => {
+      if (gameIdRef.current) {
+        deleteGame(gameIdRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className={styles.board}>
