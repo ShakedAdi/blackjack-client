@@ -1,108 +1,108 @@
 .board {
-    position: relative;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        "dealer"
-        "actions"
-        "player";
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'dealer'
+    'actions'
+    'player';
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .balance {
-    position:absolute;
-    top: 20px;
-    left: 20px;
-    margin: 0;
-    color: var(--color-gold-text);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  color: var(--color-gold-text);
 
-    font-family: var(--font-casino);
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+  font-family: var(--font-casino);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .betInput {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    width: 240px;
-    box-sizing: border-box;
-    padding: 16px 24px;
-    border-radius: 999px;
-    border: 2px solid var(--color-gold);
+  width: 240px;
+  box-sizing: border-box;
+  padding: 16px 24px;
+  border-radius: 999px;
+  border: 2px solid var(--color-gold);
 
-    background: linear-gradient(180deg, #8b1e2b 0%, #5c1019 100%);
-    color: var(--color-gold-text);
+  background: linear-gradient(180deg, #8b1e2b 0%, #5c1019 100%);
+  color: var(--color-gold-text);
 
-    font-family: var(--font-casino);
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-align: center;
+  font-family: var(--font-casino);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
 
-    cursor: text;
-    box-shadow:
-        0 0 0 1px rgba(212, 175, 55, 0.4),
-        0 8px 20px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  cursor: text;
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.4),
+    0 8px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 
-    transition: box-shadow 0.15s ease;
+  transition: box-shadow 0.15s ease;
 }
 
 .betInput::placeholder {
-    color: rgba(245, 222, 179, 0.55);
-    letter-spacing: normal;
-    font-size: 1rem;
+  color: rgba(245, 222, 179, 0.55);
+  letter-spacing: normal;
+  font-size: 1rem;
 }
 
 .betInput:focus {
-    outline: none;
-    box-shadow:
-        0 0 0 2px var(--color-gold),
-        0 8px 20px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--color-gold),
+    0 8px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .error {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    color: #ff6b6b;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: #ff6b6b;
 
-    font-family: var(--font-casino);
-    font-size: 1rem;
-    font-weight: 700;
+  font-family: var(--font-casino);
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .deck {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .actionButtons {
-    grid-area: actions;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  grid-area: actions;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .playerHands {
-    grid-area: player;
-    display: flex;
-    justify-content: center;
+  grid-area: player;
+  display: flex;
+  justify-content: center;
 }
 
 .dealerHand {
-    grid-area: dealer;
-    display: flex;
-    justify-content: center;
+  grid-area: dealer;
+  display: flex;
+  justify-content: center;
 }

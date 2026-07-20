@@ -1,30 +1,33 @@
 .newRoundButton {
-    padding: 12px 28px;
-    border-radius: 999px;
-    border: 2px solid var(--color-gold);
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 2px solid var(--color-gold);
 
-    background: linear-gradient(180deg, #8b1e2b 0%, #5c1019 100%);
-    color: var(--color-gold-text);
+  background: linear-gradient(180deg, #8b1e2b 0%, #5c1019 100%);
+  color: var(--color-gold-text);
 
-    font-family: var(--font-casino);
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+  font-family: var(--font-casino);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 
-    cursor: pointer;
-    box-shadow:
-        0 0 0 1px rgba(212, 175, 55, 0.4),
-        0 4px 12px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 
-    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
 }
 
 .newRoundButton:hover {
-    filter: brightness(1.15);
+  filter: brightness(1.15);
 }
 
 .newRoundButton:active {
-    transform: scale(0.97);
+  transform: scale(0.97);
 }

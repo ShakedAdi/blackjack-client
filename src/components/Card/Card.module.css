@@ -1,22 +1,22 @@
 .cardContainer {
-    background-color: white;
-    height: min-content;
-    width: min-content;
-    border-radius: 10px;
-    border: 1px solid grey;
+  background-color: white;
+  height: min-content;
+  width: min-content;
+  border-radius: 10px;
+  border: 1px solid grey;
 
-    .cardImg {
-        display: block;
-        margin: 10px;
-        width: 150px;
-    }
+  .cardImg {
+    display: block;
+    margin: 10px;
+    width: 150px;
+  }
 }
 
 .cardBack {
-    box-sizing: border-box;
-    width: 172px;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid grey;
+  box-sizing: border-box;
+  width: 172px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid grey;
 }
