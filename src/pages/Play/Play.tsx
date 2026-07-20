@@ -4,6 +4,9 @@ import { PlayerHands } from "../../components/PlayerHands/PlayerHands";
 import { useGame } from "../../hooks/useGame";
 import styles from "./Play.module.css";
 import { DealerHand } from "../../components/DealerHand/DealerHand";
+import { GameState } from "../../types";
+import { NewRoundButton } from "../../components/NewRoundButton/NewRoundButton";
+import { useState } from "react";
 
 export function Play() {
   const {
@@ -23,11 +26,13 @@ export function Play() {
     canSplit,
   } = useGame();
 
+  const [startNewRound, setStartNewRound] = useState<boolean>(false);
+
   return (
     <div className={styles.board}>
       <p className={styles.balance}>Balance: {balance}</p>
       {error && <p className={styles.error}>{error}</p>}
-      {roundState
+      {roundState && !startNewRound
       ? <>
         <div className={styles.dealerHand}>
           <DealerHand cards={dealerHand.cards} isHoleCardHidden={dealerHand.isHoleCardHidden}/>
@@ -36,7 +41,7 @@ export function Play() {
           <Deck/>
         </div>
         <div className={styles.actionButtons}>
-          <ActionButtons
+          {roundState === GameState.RoundOver ? <NewRoundButton onClick={() => setStartNewRound(true)}/>: <ActionButtons
             onHit={hit}
             onDouble={double}
             onSplit={split}
@@ -45,7 +50,7 @@ export function Play() {
             isStandDisabled={!canStand}
             isDoubleDisabled={!canDouble}
             isSplitDisabled={!canSplit}
-          />
+          />}
         </div>
         <div className={styles.playerHands}>
           <PlayerHands hands={playerHands}/>
@@ -57,11 +62,12 @@ export function Play() {
           placeholder="Enter your bet"
           min={1}
           max={balance}
-          onKeyDown={(e) => {
+          onKeyDown={async (e) => {
             if (e.key !== "Enter") return;
             const input = e.currentTarget;
             if (input.value === "" || !input.checkValidity()) return;
-            placeBet(Number(input.value));
+            await placeBet(Number(input.value));
+            setStartNewRound(false);
           }}
         />
       }
