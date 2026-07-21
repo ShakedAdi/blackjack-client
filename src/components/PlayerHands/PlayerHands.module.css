@@ -7,5 +7,6 @@
   width: min-content;
   border-right: 5px solid var(--color-gold);
   border-left: 5px solid var(--color-gold);
+  padding-inline: 10px;
   border-radius: 10px;
 }
