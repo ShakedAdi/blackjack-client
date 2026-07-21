@@ -2,3 +2,10 @@
   display: flex;
   gap: 100px;
 }
+
+.playingHand {
+  width: min-content;
+  border-right: 5px solid var(--color-gold);
+  border-left: 5px solid var(--color-gold);
+  border-radius: 10px;
+}
